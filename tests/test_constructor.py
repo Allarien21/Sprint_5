@@ -21,13 +21,13 @@ class TestLogin:
 
         driver.find_element(*LoginPage.LOGIN_BUTTON_LOCATOR).click()
 
-        wait.until(EC.url_to_be("https://stellarburgers.nomoreparties.site/"))
+        wait.until(EC.url_to_be(Constants.URL))
 
         driver.find_element(*MainPage.SAUCES_LOCATOR).click()
-        driver.find_element(*MainPage.SAUCES_SECTION_LOCATOR).is_displayed()
-        time.sleep(1)
+        wait.until(EC.visibility_of_element_located(MainPage.SAUCES_SECTION_LOCATOR)).is_displayed()
+
         driver.find_element(*MainPage.TOPPING_LOCATOR).click()
-        driver.find_element(*MainPage.TOPPING_SECTION_LOCATOR).is_displayed()
-        time.sleep(1)
+        wait.until(EC.visibility_of_element_located(MainPage.TOPPING_SECTION_LOCATOR)).is_displayed()
+
         driver.find_element(*MainPage.BREAD_LOCATOR).click()
-        driver.find_element(*MainPage.BREAD_SECTION_LOCATOR).is_displayed()
+        wait.until(EC.visibility_of_element_located(MainPage.BREAD_SECTION_LOCATOR)).is_displayed()

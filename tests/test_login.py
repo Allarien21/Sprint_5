@@ -22,7 +22,7 @@ class TestLogin:
 
         driver.find_element(*LoginPage.LOGIN_BUTTON_LOCATOR).click()
 
-        wait.until(EC.url_to_be("https://stellarburgers.nomoreparties.site/"))
+        wait.until(EC.url_to_be(Constants.URL))
 
         personal_account = wait.until(EC.visibility_of_element_located(MainPage.PERSONAL_ACC_LOCATOR))
         assert personal_account.is_displayed(), "Авторизация не удалась"
@@ -33,7 +33,7 @@ class TestLogin:
         driver = login
         wait = WebDriverWait(driver, 10)
 
-        wait.until(EC.url_to_be("https://stellarburgers.nomoreparties.site/"))
+        wait.until(EC.url_to_be(Constants.URL))
 
         personal_account = wait.until(EC.visibility_of_element_located(MainPage.PERSONAL_ACC_LOCATOR))
         assert personal_account.is_displayed(), "Авторизация не удалась"
@@ -55,7 +55,7 @@ class TestLogin:
 
         driver.find_element(*LoginPage.LOGIN_BUTTON_LOCATOR).click()
 
-        wait.until(EC.url_to_be("https://stellarburgers.nomoreparties.site/"))
+        wait.until(EC.url_to_be(Constants.URL))
 
         personal_account = wait.until(EC.visibility_of_element_located(MainPage.PERSONAL_ACC_LOCATOR))
         assert personal_account.is_displayed(), "Авторизация не удалась"
@@ -74,7 +74,7 @@ class TestLogin:
 
         driver.find_element(*LoginPage.LOGIN_BUTTON_LOCATOR).click()
 
-        wait.until(EC.url_to_be("https://stellarburgers.nomoreparties.site/"))
+        wait.until(EC.url_to_be(Constants.URL))
 
         personal_account = wait.until(EC.visibility_of_element_located(MainPage.PERSONAL_ACC_LOCATOR))
         assert personal_account.is_displayed(), "Авторизация не удалась"

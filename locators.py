@@ -4,7 +4,7 @@ class RegistryPage:
     USERNAME_LOCATOR = (By.XPATH, "(//input[@type='text'])[1]") # Поле ввода Имени для регистрации
     EMAIL_LOCATOR = (By.XPATH, "(//input[@type='text'])[2]") # Поле ввода Емайла для регистрации
     PASSWORD_LOCATOR = (By.XPATH, "//input[@type='password']") # Поле ввода пароля для регистрации
-    REGISTER_BUTTON_LOCATOR = (By.XPATH, "//button[contains(@class, 'button_button__33qZ0')]") # Кнопка регистрации
+    REGISTER_BUTTON_LOCATOR = (By.XPATH, "//button[contains(@Class, 'button_button')]") # Кнопка регистрации
     ERROR_MESSAGE_LOCATOR = (By.XPATH, "//p[contains(@class, 'error')]") # Поле отображение ошибки
     ENTER_BTN_LOCATOR = (By.XPATH, "//a[@href='/login']")
 
@@ -18,9 +18,10 @@ class LoginPage:
 
 class MainPage:
     PERSONAL_ACC_LOCATOR = (By.XPATH, "//a[@href='/account']") # Кнопка Личного кабинета
-    CONSTRUCTOR_LOCATOR = (By.XPATH, "/html/body/div/div/header/nav/ul/li[1]/a") # Кнопка Конструктора
+    CONSTRUCTOR_LOCATOR = (By.XPATH, "(//p[contains(@Class, 'AppHeader_header')])[1]") # Кнопка Конструктора
     ORDER_FEED_LOCATOR = (By.XPATH, "//a[@href='/feed']") # Кнопка Лента заказов
     MAIN_LOGO_LOCATOR = (By.XPATH, "//a[@class='active']") # Кнопка Логотипа сайта
+    MAIN_LOGO_LK_LOCATOR = (By.XPATH, "//div[contains(@class, 'AppHeader_header')]/a[@href= '/']") # Кнопка Логотипа сайта из личного кабинета
     ENTER_ACCOUNT_LOCATOR = (By.XPATH, "//button[text()='Войти в аккаунт']") # Кнопка Войти в акаунт
     PLACE_ORDER_LOCATOR = (By.XPATH, "//button[contains(@class, 'button')]") # Кнопка Оформление заказа
 
@@ -31,6 +32,8 @@ class MainPage:
     BREAD_SECTION_LOCATOR = (By.XPATH, "//h2[contains(text(),'Булки')]") # Поле с Названием Булки
     SAUCES_SECTION_LOCATOR = (By.XPATH, "//h2[contains(text(),'Соусы')]") # Поле с Названием Соусы
     TOPPING_SECTION_LOCATOR = (By.XPATH, "//h2[contains(text(),'Начинки')]") # Поле с Названием Начинки
+
+
 
 
 

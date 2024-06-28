@@ -5,6 +5,8 @@ from locators import RegistryPage
 from locators import LoginPage
 from locators import MainPage
 
+from constants import Constants
+
 
 fake = Faker()
 
@@ -24,14 +26,14 @@ class TestRegister:
         driver.find_element(*RegistryPage.PASSWORD_LOCATOR).send_keys(password)
         driver.find_element(*RegistryPage.REGISTER_BUTTON_LOCATOR).click()
 
-        wait.until(EC.url_to_be("https://stellarburgers.nomoreparties.site/login"))
+        wait.until(EC.url_to_be(Constants.URL_LOGIN))
 
         driver.find_element(*LoginPage.EMAIL_LOCATOR).send_keys(email)
         driver.find_element(*LoginPage.PASSWORD_LOCATOR).send_keys(password)
 
         driver.find_element(*LoginPage.LOGIN_BUTTON_LOCATOR).click()
 
-        wait.until(EC.url_to_be("https://stellarburgers.nomoreparties.site/"))
+        wait.until(EC.url_to_be(Constants.URL))
 
         account_link = wait.until(EC.visibility_of_element_located((MainPage.PERSONAL_ACC_LOCATOR)))
         assert account_link.is_displayed(), "Авторизация после регистрации не удалась"

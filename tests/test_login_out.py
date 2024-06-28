@@ -21,15 +21,15 @@ class TestLogin:
 
         driver.find_element(*LoginPage.LOGIN_BUTTON_LOCATOR).click()
 
-        wait.until(EC.url_to_be("https://stellarburgers.nomoreparties.site/"))
+        wait.until(EC.url_to_be(Constants.URL))
 
         driver.find_element(*MainPage.PERSONAL_ACC_LOCATOR).click()
 
-        wait.until(EC.url_to_be("https://stellarburgers.nomoreparties.site/account/profile"))
+        wait.until(EC.url_to_be(Constants.URL_PROFILE))
 
         driver.find_element(*PersonalAccountPage.EXIT_BTN_LOCATOR).click()
 
-        wait.until(EC.url_to_be("https://stellarburgers.nomoreparties.site/login"))
+        wait.until(EC.url_to_be(Constants.URL_LOGIN))
 
         email_locator = wait.until(EC.visibility_of_element_located(LoginPage.EMAIL_LOCATOR))
         assert email_locator.is_displayed(), "Выход из аккаунта не удался"
